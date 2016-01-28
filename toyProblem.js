@@ -54,3 +54,28 @@ Tree.prototype.removeChild = function(child){
     throw new Error("That node is not an immediate child of this tree");
   }
 };
+
+//------
+
+function largestProductOfThree (array) {
+  // Write your code here, and
+  // return your final answer.
+  var maxes = [];
+  for (var j = 1; j < array.length; j++) {
+    var cur = array[j], ind = j;   
+    var pair = array[ind - 1] * cur;
+    var threes = [];
+    for (var i = 0; i < array.length; i++) {
+      if (i === ind - 1 || i === ind) {
+        continue;
+      }
+      threes.push(pair * array[i]);
+    }
+    maxes.push(Math.max.apply(null, threes));
+  };
+  return Math.max.apply(null, maxes);
+};
+
+
+
+
