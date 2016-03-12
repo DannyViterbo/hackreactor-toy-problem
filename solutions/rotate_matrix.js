@@ -5,7 +5,6 @@ function rotateMatrix (matrix) {
     for (var j = matrix.length - 1; j >= 0; j--) {
       subArr.push(matrix[j][i]);
     }
-    debugger;
     newArr.push(subArr);
   }
   return newArr;
